@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #ecd4ea;
+}
+
+.bg__img {
+  margin-top: 50px;
+  margin-left: 90px;
+  position:absolute;
+  top: 30%;
+}
+.bg__img p{
+  text-align: left;
+  color: #693b69;
+  font-family: 'Rubik', sans-serif;
+  font-size: 26px;
+}
+
+.text-typing{
+  width: 24ch;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid #511f52;
+  animation: flashing-border .7s step-end infinite,
+  printed-text 4s steps(40);
+}
+@keyframes flashing-border{
+  50%{
+    border-color: transparent;
+  }
+}
+@keyframes printed-text{
+  0%{
+     width: 0;
+  }
+}
+
+.user {
+  width: 100px;
+  height: 100px;
+}
+.forgot__link {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #bababa;
+  font-weight: 700;
+  text-decoration: none;
+  transition: .2s;
+}
+.forgot__link:hover {
+  color: #838383;
+}
+.form-box{
+  color: #511f52;
+  width: 400px;
+  padding: 50px;
+  padding-top: 90px;
+  padding-bottom: 90px; 
+  position: absolute;
+  box-shadow: -15px 53px 68px -9px rgba(83, 16, 61, 0.75);
+  border-top-left-radius: 25%;
+  border-bottom-right-radius: 25%; 
+  top: 50%;
+  left: 60%; 
+  transform: translateY(-50%);
+  background: #fff;
+  text-align: center;
+}
+.form-box h1{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 28px;
+}
+.form-box input[type = "text"],.form-box input[type = "password"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #a55fa5;
+  padding: 14px 15px;
+  width: 200px;
+  outline: none;
+  transition: 0.25s;
+}
+.form-box input[type = "text"]:focus,.form-box input[type = "password"]:focus{
+  width: 250px;
+  border-color: #511f52;
+}
+.form-box input[type = "submit"]{
+  border:0;
+  color: #511f52;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #511f52;
+  width: 230px;
+  outline: none;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.form-box input[type = "submit"]:hover{
+  background: #511f52;
+  color: white;
+}
+@media only screen and (max-width: 1350px) {
+  .bg__img {
+    margin-left: 50px;
+    margin-top: 80px;
+    width: 550px;
+  }
+}
+@media only screen and (max-width: 1025px) {
+  .bg__img {
+    display: none;
+  }
+  body {
+    background: #ecd4ea;
+  }
+  .form-box{ 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

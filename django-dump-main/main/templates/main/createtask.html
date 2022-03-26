@@ -1,0 +1,78 @@
+{% extends 'main/base.html' %} 
+{% load static %}
+
+{% block title %}Новая карта{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css\newcard.css' %}">
+{% endblock %}
+
+{% block contant %}
+    <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <a href="{% url 'home'%}" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <img src="{% static 'img\logo.png' %}" alt="logo" height="60px">
+            </a>
+
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">Главное меню</a></li>
+            <li><a href="{% url 'readcz'%}" class="nav-link px-2 link-dark">Чтение</a></li> 
+            <li><a href="{% url 'makecard'%}" class="nav-link px-2 link-secondary">Создать карточку</a></li>
+            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">Слушание</a></li> <!--ИЗМЕНИТЬ ПОТОМ ССЫЛКИ-->
+            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">Тест</a></li>
+            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">О нас</a></li>
+            </ul>
+
+            <div class="col-md-3 text-end">
+            <form action="{% url 'logout' %}" method="get">
+                <button type="submit" class="btn btn-outline-primary me-2">Выйти</button>
+            </form>
+            <!-- <a class="hello-msg" href="{% url 'logout' %}"></a> -->
+            </div>
+        </header>
+    </div>
+
+    <div class="container">
+        <div class="newcard">
+            <h3>Создай карточку!</h3>     
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="input-group mb-3">
+                    {{form.title}}
+                </div>
+                <div class="input-group mb-3">
+                    {{form.task}}
+                </div>
+                <!-- {{form.title}}<br>
+                {{form.task}}<br> -->
+
+                <div class="cards-btn">
+                    <button type="submit" class="btn btn-success">Добавить карточку!</button>
+                    <a href="{% url 'learncard'%}" class="btn btn-success">Учить карточки!</a>
+                </div>
+                
+                <span>{{error}}</span>
+            </form>
+        </div>
+        
+    </div>
+
+
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-muted">© 2022 Granovsky & Borisyuk</p>
+        
+            <a href="{% url 'home'%}" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <img src="{% static 'img\logo.png' %}" alt="logo" height="40px">
+            </a>
+        
+            <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="{% url 'home'%}" class="nav-link px-2 text-muted">Главное меню</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Разделы</a></li>   <!--ИЗМЕНИТЬ ПОТОМ ССЫЛКИ-->
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Тест</a></li>
+            <li class="nav-item"><a href="{% url 'about'%}" class="nav-link px-2 text-muted">О нас</a></li>
+            </ul>
+        </footer>
+    </div>
+{% endblock %}
