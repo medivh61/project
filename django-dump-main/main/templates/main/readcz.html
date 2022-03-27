@@ -1,4 +1,4 @@
-{% extends 'main/base.html' %} 
+{% extends 'main/base.html' %}
 {% load static %}
 
 {% block title %}Раздел Чтение{% endblock %}
@@ -9,102 +9,117 @@
 
 
 {% block contant %}
-    <div class="container">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-            <a href="{% url 'home'%}" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+<div class="container">
+    <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <a href="{% url 'home'%}"
+            class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
             <img src="{% static 'img\logo.png' %}" alt="logo" height="60px">
-            </a>
-    
-            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        </a>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">Главное меню</a></li>
-            <li><a href="{% url 'readcz'%}" class="nav-link px-2 link-secondary">Чтение</a></li> 
+            <li><a href="{% url 'readcz'%}" class="nav-link px-2 link-secondary">Чтение</a></li>
             <li><a href="{% url 'makecard'%}" class="nav-link px-2 link-dark">Создать карточку</a></li>
-            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">Слушание</a></li> <!--ИЗМЕНИТЬ ПОТОМ ССЫЛКИ-->
+            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">Слушание</a></li>
+            <!--ИЗМЕНИТЬ ПОТОМ ССЫЛКИ-->
             <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">Тест</a></li>
             <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">О нас</a></li>
-            </ul>
-    
-            <div class="col-md-3 text-end">
+        </ul>
+
+        <div class="col-md-3 text-end">
             <!-- <button type="button" class="btn btn-outline-primary me-2">Войти</button>
             <button type="button" class="btn btn-primary">Регистрация</button> -->
             <form action="{% url 'logout' %}" method="get">
                 <button type="submit" class="btn btn-outline-primary me-2">Выйти</button>
             </form>
-            </div>
-        </header>
-    </div>
+        </div>
+    </header>
+</div>
 
 
-    <div class="container">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card h-100">
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100">
                 <div class="card-body">
                     <h5 class="card-title">O PEJSKOVI A KOČIČCE, JAK SI MYLI PODLAHU</h5>
-                    <p class="card-text">To bylo tenkrát, když pejsek a kočička ještě spolu hospodařili; měli u lesa svůj malý domeček a tam spolu bydleli a
-                        chtěli všechno dělat tak, jak to dělají velcí lidé. Ale oni to vždycky tak neuměli, protože mají malé a nešikovné tlapičky a
-                        na těch tlapičkách nemají prsty, jako má člověk, jenom takové malé polštářky a na nich drápky. A tak nemohli dělat
-                        všechno tak, jak to dělají lidé, a do školy nechodili, protože škola není pro zvířátka, ba ne, to ne! Co myslíte? Ta je jen
+                    <p class="card-text">To bylo tenkrát, když pejsek a kočička ještě spolu hospodařili; měli u lesa
+                        svůj malý domeček a tam spolu bydleli a
+                        chtěli všechno dělat tak, jak to dělají velcí lidé. Ale oni to vždycky tak neuměli, protože mají
+                        malé a nešikovné tlapičky a
+                        na těch tlapičkách nemají prsty, jako má člověk, jenom takové malé polštářky a na nich drápky. A
+                        tak nemohli dělat
+                        všechno tak, jak to dělají lidé, a do školy nechodili, protože škola není pro zvířátka, ba ne,
+                        to ne! Co myslíte? Ta je jen
                         pro děti!
                     </p>
                 </div>
                 <div class="card-footer">
                     <a href="{% url 'readcz1' %}" class="btn btn-primary">Читать полностью</a>
                 </div>
-                </div>
             </div>
+        </div>
 
-            <div class="col">
-                <div class="card h-100">
+        <div class="col">
+            <div class="card h-100">
                 <div class="card-body">
                     <h5 class="card-title">JAK SI PEJSEK ROZTRHL KAŤATA</h5>
                     <p class="card-text">
-                        Když ještě pejsek a kočička spolu hospodařili (však jsme o tom tuhle vypravovali, jak si šikovně umyli podlahu a jak se
-                        potom oba na slunci sušili) a měli ještě svůj domeček a vedli si v něm své hospodářství, byla jednou velikonoční
-                        neděle, a tak si řekli, že půjdou spolu na výlet. Sluníčko pěkně svítilo. "Půjdeme třeba do lesa," povídá pejsek, "kampak
+                        Když ještě pejsek a kočička spolu hospodařili (však jsme o tom tuhle vypravovali, jak si šikovně
+                        umyli podlahu a jak se
+                        potom oba na slunci sušili) a měli ještě svůj domeček a vedli si v něm své hospodářství, byla
+                        jednou velikonoční
+                        neděle, a tak si řekli, že půjdou spolu na výlet. Sluníčko pěkně svítilo. "Půjdeme třeba do
+                        lesa," povídá pejsek, "kampak
                         jinam bychom šli, když je tak hezky?"
                     </p>
                 </div>
                 <div class="card-footer">
                     <a href="{% url 'readcz2' %}" class="btn btn-primary">Читать полностью</a>
                 </div>
-                </div>
             </div>
+        </div>
 
-            <div class="col">
-                <div class="card h-100">
+        <div class="col">
+            <div class="card h-100">
                 <div class="card-body">
                     <h5 class="card-title">JAK TO BYLO NA VÁNOCE</h5>
                     <p class="card-text">
-                        "Heč," povídala kočička pejskovi, "já něco vím." - "A copak?" divil se pejsek. "Heč," povídá kočička, "já vím, že pan
-                        Čapek má napsat na vánoce nějaké povídání pro ty malé děti, zase něco o nás, o kočičce a pejskovi." - "Hehe," těšil se
-                        pejsek, "ale jen aby to tam o mně pěkně napsal!" - "Ba ne," řekla kočička, "on nemůže na nic připadnout, sedí u toho
+                        "Heč," povídala kočička pejskovi, "já něco vím." - "A copak?" divil se pejsek. "Heč," povídá
+                        kočička, "já vím, že pan
+                        Čapek má napsat na vánoce nějaké povídání pro ty malé děti, zase něco o nás, o kočičce a
+                        pejskovi." - "Hehe," těšil se
+                        pejsek, "ale jen aby to tam o mně pěkně napsal!" - "Ba ne," řekla kočička, "on nemůže na nic
+                        připadnout, sedí u toho
                         stolu, pořád přemýšlí, a pořád neví, co by napsal.
                     </p>
                 </div>
                 <div class="card-footer">
                     <a href="{% url 'readcz3' %}" class="btn btn-primary">Читать полностью</a>
                 </div>
-                </div>
             </div>
-            </div>
+        </div>
     </div>
+</div>
 
 
-    <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <p class="col-md-4 mb-0 text-muted">© 2022 Granovsky & Borisyuk</p>
-        
-            <a href="{% url 'home'%}" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                <img src="{% static 'img\logo.png' %}" alt="logo" height="40px">
-            </a>
-        
-            <ul class="nav col-md-4 justify-content-end">
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">© 2022 Granovsky & Borisyuk</p>
+
+        <a href="{% url 'home'%}"
+            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <img src="{% static 'img\logo.png' %}" alt="logo" height="40px">
+        </a>
+
+        <ul class="nav col-md-4 justify-content-end">
             <li class="nav-item"><a href="{% url 'home'%}" class="nav-link px-2 text-muted">Главное меню</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Разделы</a></li>   <!--ИЗМЕНИТЬ ПОТОМ ССЫЛКИ-->
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Разделы</a></li>
+            <!--ИЗМЕНИТЬ ПОТОМ ССЫЛКИ-->
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Тест</a></li>
             <li class="nav-item"><a href="{% url 'about'%}" class="nav-link px-2 text-muted">О нас</a></li>
-            </ul>
-        </footer>
-    </div>
+        </ul>
+    </footer>
+</div>
 {% endblock %}

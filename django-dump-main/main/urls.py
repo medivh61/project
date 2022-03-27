@@ -2,8 +2,8 @@ from django.urls import path
 from . import views
 from .views import(
     QuizListView,
-    quiz_data_view,
     quiz_view,
+    quiz_data_view,
     save_quiz_view,
 )
 
@@ -12,6 +12,7 @@ urlpatterns = [
     path('about', views.about, name='about'),
     path('makecard', views.make_card, name='makecard'),
     path('learncard', views.learn_cards, name='learncard'),
+    path('listening', views.listening, name='listening'),
 
     path('readcz', views.reading_cz, name='readcz'),
     path('readcz1', views.reading1, name='readcz1'),
