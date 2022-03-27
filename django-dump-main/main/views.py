@@ -64,6 +64,8 @@ def reading2(request):
     return render(request, 'main/pagesforread/page2.html')
 def reading3(request):
     return render(request, 'main/pagesforread/page3.html')
+def listening(request):
+    return render(request, 'main/listeningcz.html')
 
 def registration(request):
     if request.user.is_authenticated:
@@ -135,56 +137,56 @@ def quiz_data_view(request, pk):
 def save_quiz_view(request, pk):
     print(request.POST)
     # if is_ajax(request=request):
-    # if request.headers.get('x-requested-with')=='XMLHttpRequest':
+    if request.headers.get('x-requested-with')=='XMLHttpRequest':
     # if request.is_ajax():
-        # data = request.POST
-        # print(type(data))
-        # questions = []
-        # data = request.POST
-        # # data = dict(data.list())
-        # # print(type(data)) 
-        # data_ = dict(data.lists())
-        # print(type(data_))
-        # print(data_)
-        # data_.pop('csrfmiddlewaretoken')
-        # print(data_)
-        # for k in data_.keys():
-        #     print('key: ',k)
-        #     question = Question.objects.get(text=k)
-        #     questions.append(question)
-        # print(questions)
+        data = request.POST
+        print(type(data))
+        questions = []
+        data = request.POST
+        # data = dict(data.list())
+        # print(type(data)) 
+        data_ = dict(data.lists())
+        print(type(data_))
+        print(data_)
+        data_.pop('csrfmiddlewaretoken')
+        print(data_)
+        for k in data_.keys():
+            print('key: ',k)
+            question = Question.objects.get(text=k)
+            questions.append(question)
+        print(questions)
 
-        # user = request.user
-        # quiz = Quiz.objects.get(pk=pk)
+        user = request.user
+        quiz = Quiz.objects.get(pk=pk)
 
-        # score = 0
-        # multiplier = 100/ quiz.number_of_questions
-        # results = []
-        # correct_answer = None
+        score = 0
+        multiplier = 100/ quiz.number_of_questions
+        results = []
+        correct_answer = None
 
-        # for q in questions:
-        #     a_selected = request.POST.get(q.text)
+        for q in questions:
+            a_selected = request.POST.get(q.text)
 
-        #     if a_selected !="":
-        #         question_answers = Answer.objects.filter(question=q) 
-        #         for a in question_answers:
-        #             if a_selected == a.text:
-        #                 if a.correct:
-        #                     score +=1
-        #                     correct_answer = a.text
-        #             else:
-        #                 if a.correct:
-        #                     correct_answer = a.text
-        #         results.append({str(q): {'correct_answer': correct_answer,'answered': a_selected}})
-        #     else:
-        #          results.append({str(q):'not answered'})
+            if a_selected !="":
+                question_answers = Answer.objects.filter(question=q) 
+                for a in question_answers:
+                    if a_selected == a.text:
+                        if a.correct:
+                            score +=1
+                            correct_answer = a.text
+                    else:
+                        if a.correct:
+                            correct_answer = a.text
+                results.append({str(q): {'correct_answer': correct_answer,'answered': a_selected}})
+            else:
+                 results.append({str(q):'not answered'})
 
-        # score_ = score * multiplier
-        # Result.objects.create(quiz=quiz, user=user,score = score_)
+        score_ = score * multiplier
+        Result.objects.create(quiz=quiz, user=user,score = score_)
 
-        # if score_ >=quiz.reqired_score_to_pass:
-        #     return JsonResponse({'passed': True, 'score': score_, 'results': results})
-        # else:
-        #     return JsonResponse({'passed': False, 'score': score_, 'results': results})
+        if score_ >=quiz.reqired_score_to_pass:
+            return JsonResponse({'passed': True, 'score': score_, 'results': results})
+        else:
+            return JsonResponse({'passed': False, 'score': score_, 'results': results})
         
-    return JsonResponse({'text': 'works'})
+    # return JsonResponse({'text': 'works'})
