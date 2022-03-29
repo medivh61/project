@@ -20,25 +20,22 @@ body{
   font-size: 26px;
 }
 
-.text-typing{
-  width: 24ch;
+.text-typing {
+  color: #693b69;
   overflow: hidden;
-  white-space: nowrap;
-  border-right: 4px solid #511f52;
-  animation: flashing-border .7s step-end infinite,
-  printed-text 4s steps(40);
+  white-space: nowrap; 
+  animation: 
+    typing 3.5s steps(60, end),
+    blink-caret  step-end infinite;
 }
-@keyframes flashing-border{
-  50%{
-    border-color: transparent;
-  }
-}
-@keyframes printed-text{
-  0%{
-     width: 0;
-  }
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+}
 .user {
   width: 100px;
   height: 100px;
