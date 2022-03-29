@@ -19,8 +19,8 @@ body{
   font-family: 'Rubik', sans-serif;
   font-size: 26px;
 }
-
-.text-typing {
+/* Раскомменть это! */
+/* .text-typing {
   color: #693b69;
   overflow: hidden;
   white-space: nowrap; 
@@ -35,7 +35,7 @@ body{
 
 @keyframes blink-caret {
   from, to { border-color: transparent }
-}
+} */
 .user {
   width: 100px;
   height: 100px;
