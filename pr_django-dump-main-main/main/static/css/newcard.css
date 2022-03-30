@@ -1,0 +1,57 @@
+/* ----------футер и хедер дизайн---------- */
+.btn-primary, .btn-success {
+    background-color: #511f52;
+    border-color: #511f52;
+}
+
+.btn-outline-primary{
+    color: #511f52;
+    border-color: #511f52;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary, .btn-success:hover,
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active  {
+    color: #fff;
+    border-color: #a987a8;
+    background-color: #a987a8;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.active, 
+.open>.dropdown-toggle.btn-outline-primary{
+    color: #fff;
+    border-color: #a987a8;
+    background-color: #a987a8;
+}
+
+/* ----------Карточка дизайн---------- */
+.newcard {
+    position: relative;
+    margin: 5% auto 5% auto;
+    max-height: 400px;
+    max-width: 600px;
+    background: #f2f2f2;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 8px #d0d0d0;
+    padding: 20px;
+    text-align: center;
+}
+
+.input-group>.form-control, .input-group>.form-select {
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0px 60px 10px 60px;
+}
+
+h3{
+    padding: 20px;
+}
+
+.btn-success{
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.cards-btn{
+    margin-right: 30px;
+}

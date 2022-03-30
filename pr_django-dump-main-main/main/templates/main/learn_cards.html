@@ -1,0 +1,90 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Учим карточки!{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css\style_cards.css' %}">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+{% endblock %}
+
+{% block contant %}
+<div class="container">
+    <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <a href="{% url 'home'%}"
+            class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <img src="{% static 'img\logo.png' %}" alt="logo" height="60px">
+        </a>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">Главное меню</a></li>
+            <li><a href="{% url 'readcz'%}" class="nav-link px-2 link-dark">Чтение</a></li>
+            <li><a href="{% url 'makecard'%}" class="nav-link px-2 link-dark">Создать карточку</a></li>
+            <li><a href="{% url 'listening'%}" class="nav-link px-2 link-secondary">Слушание</a></li>
+            <!--ИЗМЕНИТЬ ПОТОМ ССЫЛКИ-->
+            <li><a href="{% url 'main-view'%}" class="nav-link px-2 link-dark">Тест</a></li>
+            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">О нас</a></li>
+        </ul>
+
+        <div class="col-md-3 text-end">
+            <!-- <button type="button" class="btn btn-outline-primary me-2">Войти</button>
+            <button type="button" class="btn btn-primary">Регистрация</button> -->
+            <form action="{% url 'logout' %}" method="get">
+                <button type="submit" class="btn btn-outline-primary me-2">Выйти</button>
+            </form>
+        </div>
+    </header>
+</div>
+{% if tasks %}
+<div class="row">
+    {% for el in tasks %}
+    <div class="cards col-sm-6">
+        <div class="cards_1 card">
+            <div class="card-body">
+                <h5 class="card-title">Карточка</h5>
+                <p class="card-text">{{ el.title }}</p>
+                <button class="btn_1 btn btn-secondary" data-bs-dismiss="modal" aria-label="close">Перевод</button>
+            </div>
+        </div>
+        <div class="cards_2 card">
+            <div class="card-body">
+                <h5 class="card-title">Карточка</h5>
+                <p class="card-text">{{ el.task}}</p>
+                <button class="btn_2 btn btn-secondary" data-bs-dismiss="modal" aria-label="close">Вернуться</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Изменение параметров карточки при клике мышки -->
+<script>
+    const elem = document.querySelectorAll('.cards_2');
+    for (let i = 0; i < elem.length; i++) {
+        elem[i].classList.add("card--hide");
+    }
+
+    const cards = document.querySelectorAll('.cards');
+    cards.forEach(card => {
+        card.addEventListener('click', ({ target }) => {
+            const card1 = card.querySelector('.cards_1');
+            const card2 = card.querySelector('.cards_2');
+            if (target.classList.contains('btn_1')) {
+                card1.classList.add('card--hide');
+                card2.classList.remove('card--hide');
+            }
+            else if (target.classList.contains('btn_2')) {
+                card1.classList.remove('card--hide');
+                card2.classList.add('card--hide');
+            }
+        });
+    });
+</script>
+{% else %}
+<div class="card middle">
+    <div class="front-content middle">
+        <h2 class="text-white">У Вас нет карточек</h2>
+    </div>
+    {% endif %}
+    {% endblock %}
