@@ -5,6 +5,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css\styleListening.css' %}">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 {% endblock %}
 
 
@@ -231,10 +232,11 @@
         </div>
     </div>
 
-      <!-- Скрипт для остановки видео в модальном окне -->
-      <script>
+    <!-- Скрипт для остановки видео в модальном окне -->
+    <script>
         $(function () {
             $(".btn").on("click", function () {
+                console.log('Hell')
                 $("iframe").each(function () {
                     var src = $(this).attr('src');
                     $(this).attr('src', src);

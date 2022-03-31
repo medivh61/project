@@ -10,31 +10,30 @@
 {% block content %}
 
 <div class="container">
-    <header
-        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <a href="{% url 'home'%}"
-            class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-            <img src="{% static 'img\logo.png' %}" alt="logo" height="60px">
-        </a>
+  <header
+    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <a href="{% url 'home'%}" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      <img src="{% static 'img\logo.png' %}" alt="logo" height="60px">
+    </a>
 
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">Главное меню</a></li>
-            <li><a href="{% url 'readcz'%}" class="nav-link px-2 link-dark">Чтение</a></li>
-            <li><a href="{% url 'makecard'%}" class="nav-link px-2 link-dark">Создать карточку</a></li>
-            <li><a href="{% url 'listening'%}" class="nav-link px-2 link-dark">Слушание</a></li>
-            <!--ИЗМЕНИТЬ ПОТОМ ССЫЛКИ-->
-            <li><a href="{% url 'main-view'%}" class="nav-link px-2 link-secondary">Тест</a></li>
-            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">О нас</a></li>
-        </ul>
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">Главное меню</a></li>
+      <li><a href="{% url 'readcz'%}" class="nav-link px-2 link-dark">Чтение</a></li>
+      <li><a href="{% url 'makecard'%}" class="nav-link px-2 link-dark">Создать карточку</a></li>
+      <li><a href="{% url 'listening'%}" class="nav-link px-2 link-dark">Слушание</a></li>
+      <!--ИЗМЕНИТЬ ПОТОМ ССЫЛКИ-->
+      <li><a href="{% url 'main-view'%}" class="nav-link px-2 link-secondary">Тест</a></li>
+      <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">О нас</a></li>
+    </ul>
 
-        <div class="col-md-3 text-end">
-            <!-- <button type="button" class="btn btn-outline-primary me-2">Войти</button>
+    <div class="col-md-3 text-end">
+      <!-- <button type="button" class="btn btn-outline-primary me-2">Войти</button>
             <button type="button" class="btn btn-primary">Регистрация</button> -->
-            <form action="{% url 'logout' %}" method="get">
-                <button type="submit" class="btn btn-outline-primary me-2">Выйти</button>
-            </form>
-        </div>
-    </header>
+      <form action="{% url 'logout' %}" method="get">
+        <button type="submit" class="btn btn-outline-primary me-2">Выйти</button>
+      </form>
+    </div>
+  </header>
 </div>
 
 <!-- Modal -->

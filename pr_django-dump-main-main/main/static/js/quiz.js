@@ -1,13 +1,13 @@
 
 const url = window.location.href
-// console.log(url)
+
 const quizBox = document.getElementById('quiz-box')
 const scoreBox = document.getElementById('score-box')
 const resultBox = document.getElementById('result-box')
 const timerBox = document.getElementById('timer-box')
 
 const activateTimeer = (time) => {
-    // console.log(time)
+
 
     if (time.toString().length < 2) {
         timerBox.innerHTML = `<b>0${time}:00</b>`
@@ -43,7 +43,7 @@ const activateTimeer = (time) => {
                 clearInterval(timer)
                 alert('Время вышло')
                 sendData()
-            },500)
+            }, 500)
         }
         timerBox.innerHTML = `<b>${displayMinutes}:${displaySeconds}</b>`
     }, 1000)
@@ -53,12 +53,10 @@ $.ajax({
     type: 'GET',
     url: `${url}/data`,
     success: function (response) {
-        // console.log(response)
         const data = response.data
         data.forEach(el => {
             for (const [question, answers] of Object.entries(el)) {
-                // console.log(question)
-                // console.log(answers)
+
                 quizBox.innerHTML += `
                     <hr>
                     <div class="mb-2">
@@ -68,12 +66,11 @@ $.ajax({
                 answers.forEach(answer => {
                     quizBox.innerHTML += `
                     <div>
-                        <input type="radio" class="ans" id="${question} - ${answer}" name="${question}" value="${answer}">
+                        <input type="checkbox" class="ans" id="${question} - ${answer}" name="${question}" value="${answer}">
                         <label for="${question}">${answer}</label>
                     </div>
                     `;
                 });
-                console.log('test');
             }
         });
         activateTimeer(response.time)
@@ -91,7 +88,6 @@ const sendData = () => {
     const data = {}
     data['csrfmiddlewaretoken'] = csrf.value
 
-    console.log(elements)
     elements.forEach(el => {
         if (el.checked) {
             data[el.name] = el.value
@@ -107,17 +103,13 @@ const sendData = () => {
         url: `${url}/save/`,
         data: data,
         success: function (response) {
-            // console.log(response)
-            // console.log(data)
-            const results = response.results
-            console.log(results)
 
-            // quizForm.classList.add('invisible')
+            const results = response.results
+
             document.getElementById("timer-box").remove()
             document.getElementById("quiz-box").remove()
             document.getElementById("button_save").remove()
-            // const newDiv = document.createElement("div");
-            // para.innerHTML = someHere;
+
 
             scoreBox.innerHTML = `<h6>${response.passed ? 'Поздравляю! Вы прошли тест.' : 'К сожалению, вы не прошли тест.'} Ваш результат ${response.score.toFixed(2)}%</h6>`
 
@@ -146,9 +138,9 @@ const sendData = () => {
                         }
                     }
                 }
-                // const body = document.getElementsByTagName('BODY')[0]
+
                 resultBox.append(resDiv)
-                // document.getElementById("BODY").appendChild(resDiv);
+
             })
         },
         error: function (error) {
