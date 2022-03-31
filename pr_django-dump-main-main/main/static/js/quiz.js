@@ -66,7 +66,7 @@ $.ajax({
                 answers.forEach(answer => {
                     quizBox.innerHTML += `
                     <div>
-                        <input type="checkbox" class="ans" id="${question} - ${answer}" name="${question}" value="${answer}">
+                        <input type="radio" class="ans" id="${question} - ${answer}" name="${question}" value="${answer}">
                         <label for="${question}">${answer}</label>
                     </div>
                     `;

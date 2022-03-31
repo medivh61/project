@@ -170,7 +170,7 @@
                         allowfullscreen></iframe></div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-dismiss="modal" aria-label="close">Закрыть</button>
+                <button class="btn_2 btn btn-secondary" data-bs-dismiss="modal" aria-label="close">Закрыть</button>
             </div>
         </div>
     </div>
@@ -189,7 +189,7 @@
                         allowfullscreen></iframe></div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-dismiss="modal" aria-label="close">Закрыть</button>
+                <button class="btn_2 btn btn-secondary" data-bs-dismiss="modal" aria-label="close">Закрыть</button>
             </div>
         </div>
     </div>
@@ -208,7 +208,7 @@
                         allowfullscreen></iframe></div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-dismiss="modal" aria-label="close">Закрыть</button>
+                <button class="btn_2 btn btn-secondary" data-bs-dismiss="modal" aria-label="close">Закрыть</button>
             </div>
         </div>
     </div>
@@ -227,7 +227,7 @@
                         allowfullscreen></iframe></div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-dismiss="modal" aria-label="close">Закрыть</button>
+                <button class="btn_2 btn btn-secondary" data-bs-dismiss="modal" aria-label="close">Закрыть</button>
             </div>
         </div>
     </div>
@@ -235,13 +235,11 @@
     <!-- Скрипт для остановки видео в модальном окне -->
     <script>
         $(function () {
-            $(".btn").on("click", function () {
-                console.log('Hell')
+            $(".btn_2").on("click", function () {
                 $("iframe").each(function () {
                     var src = $(this).attr('src');
                     $(this).attr('src', src);
                 });
-                // console.log("hello") 
             });
         });
     </script>

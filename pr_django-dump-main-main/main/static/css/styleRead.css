@@ -20,3 +20,10 @@
     border-color: #a987a8;
     background-color: #a987a8;
 }
+
+@media (min-width: 1200px) {
+    .read{
+        margin:0 auto;
+        max-width: 930px;
+    }
+}
