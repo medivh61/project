@@ -1,0 +1,102 @@
+<!-- В стадии разработки -->
+{% extends 'main/base.html' %} 
+{% load static %}
+
+{% block title %}Личный кабинет{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css\lk.css' %}">
+{% endblock %}
+
+{% block contant %}
+
+<style>
+    body{
+        /* background-image: url( "{% static 'img/bgmain.png' %}"); */
+        background-image: url("https://catherineasquithgallery.com/uploads/posts/2021-02/1613556082_29-p-fon-dlya-prezentatsii-neitralnii-delovoi-31.jpg");
+        background-size: cover;
+    }
+</style>
+
+<div class="container">
+    <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <a href="{% url 'home'%}"
+            class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <img src="{% static 'img\logo.png' %}" alt="logo" height="60px">
+        </a>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">Главное меню</a></li>
+            <li><a href="{% url 'readcz'%}" class="nav-link px-2 link-dark">Чтение</a></li>
+            <li><a href="{% url 'makecard'%}" class="nav-link px-2 link-dark">Создать карточку</a></li>
+            <li><a href="{% url 'listening'%}" class="nav-link px-2 link-dark">Слушание</a></li>
+            <!--ИЗМЕНИТЬ ПОТОМ ССЫЛКИ-->
+            <li><a href="{% url 'main-view'%}" class="nav-link px-2 link-dark">Тест</a></li>
+            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">О нас</a></li>
+        </ul>
+
+        <div class="col-md-3 text-end">
+            <!-- <button type="button" class="btn btn-outline-primary me-2">Войти</button>
+            <button type="button" class="btn btn-primary">Регистрация</button> -->
+            <form action="{% url 'logout' %}" method="get">
+                <button type="submit" class="btn btn-outline-primary me-2">Выйти</button>
+            </form>
+        </div>
+    </header>
+</div>
+
+<div class="user_info">
+    <div class="container">
+        <div class="card c2">
+            <div class="picture">
+                <img class="profile-pic" src="{{request.user.customer.profile_pic.url}}" width="100" height="100">
+            </div>
+            <div class="name">
+                <p>{{request.user}}</p>
+            </div>
+            <div class="jobtitle">
+            <p>student</p>
+            </div>
+            <div class="buttons">
+                <!-- <button type="submit" class="btn btn-outline-primary me-2">Изменить</button> -->
+                <button type="submit" class="btn btn-outline-primary me-2">Изменить</button>
+            <!-- <div class="button2">
+                <button>Button 2</button>
+            </div> -->
+            </div>
+        </div>
+
+        <div class="card_content c2">
+            <div class="some_info">
+                <br>
+                Информация
+                <form method="POST" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <!-- {{form.as_p}} -->
+                    <div class="username">
+                        {{form.user}}
+                        <br>
+                        {{form.name}}
+                        <br>
+                        {{form.email}}
+                        <br>
+                    </div>
+                    
+                    <label class="pic-upload">
+                    {{form.profile_pic}}
+                    </label>
+                    <br>
+
+                    <br>
+                    <input class="btn btn-primary" type="submit" name="Update information">
+                </form>
+            </div>
+        </div>
+
+        <div class="grafs c2">Графики</div>
+    </div>
+</div>
+
+
+{% endblock %}

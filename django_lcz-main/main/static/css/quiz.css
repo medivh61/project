@@ -1,0 +1,16 @@
+body {
+    background: rgb(255,228,249);
+    background: radial-gradient(circle, rgba(255,228,249,1) 0%, rgba(208,226,255,1) 100%);
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.active, 
+.open>.dropdown-toggle.btn-outline-primary {
+    color: #fff;
+    border-color: #511f52;
+    background-color: #511f52;
+}
+
+.btn-outline-primary {
+  color: #511f52;
+  border-color: #511f52;
+}

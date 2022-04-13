@@ -1,0 +1,247 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Раздел Чтение{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css\styleListening.css' %}">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+{% endblock %}
+
+
+{% block contant %}
+<div class="container">
+    <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <a href="{% url 'home'%}"
+            class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <img src="{% static 'img\logo.png' %}" alt="logo" height="60px">
+        </a>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">Главное меню</a></li>
+            <li><a href="{% url 'readcz'%}" class="nav-link px-2 link-dark">Чтение</a></li>
+            <li><a href="{% url 'makecard'%}" class="nav-link px-2 link-dark">Создать карточку</a></li>
+            <li><a href="{% url 'listening'%}" class="nav-link px-2 link-secondary">Слушание</a></li>
+            <!--ИЗМЕНИТЬ ПОТОМ ССЫЛКИ-->
+            <li><a href="{% url 'main-view'%}" class="nav-link px-2 link-dark">Тест</a></li>
+            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">О нас</a></li>
+        </ul>
+
+        <div class="col-md-3 text-end">
+            <!-- <button type="button" class="btn btn-outline-primary me-2">Войти</button>
+            <button type="button" class="btn btn-primary">Регистрация</button> -->
+            <form action="{% url 'logout' %}" method="get">
+                <button type="submit" class="btn btn-outline-primary me-2">Выйти</button>
+            </form>
+        </div>
+    </header>
+</div>
+
+<div class="player">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xl-3 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://i.pinimg.com/originals/6c/df/a9/6cdfa92862420a7486334b821cce84a2.jpg"
+                        class="card-img-top" alt="Peppa">
+                    <div class="card-body">
+                        <h5 class="card-title">Prasátko Peppa | Slečna Delfína | Kreslená</h5>
+                        <p class="card-text">Peppa je roztomilé prasátko, které žije společně se svou matkou prasetem,
+                            otcem prasetem a malým bratrem Georgem.
+                            Peppa miluje hrát, oblékat se, jít na nová místa a začít nové datování, ale nejoblíbenější
+                            činností Peppa Pig je skákat do špinavých kaluží.
+                            Všechny její dobrodružství vždy končí bezpečně a jsou doprovázeny výbuchy chrochtání a
+                            smíchu.
+                        </p>
+
+                        <div class="itd_play" data-bs-toggle="modal" data-bs-target="#mymodal1">
+                            <div class="btn btn-primary">
+                                Смотреть
+                            </div>
+                        </div>
+                        <!-- <a href="https://youtu.be/Tb_FVJWg8Ug" class="btn btn-primary">Смотреть</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://womanel.com/wp-content/uploads/2021/07/exwlv_Em7LP30b9Zro7Ibt4ltLJlWidRlQW1AiXhnMlvmPeyBFAVjbyjv52XUV8_y3IaS-riNbYKivuYYP35QkuqERKXZATEaEop2D-E9qjyUkDfSLbaRlHFuRfxNivoL7NG5jwc.jpg"
+                        class="card-img-top" alt="Novoroční">
+                    <div class="card-body">
+                        <h5 class="card-title">Dialog v Češtině | Novoroční předsevzetí</h5>
+                        <p class="card-text">Napsali jsme zajímavý dialog o novoročních slibech, které dáváme na začátku
+                            každého roku.
+                            V dialogu jsme použili mnoho zajímavých slov a výrazů.
+                            Ve druhé části videa budete moci opakovat fráze z dialogu za hlasatelem a sledovat hrubý
+                            překlad.
+                        </p>
+
+                        <div class="itd_play" data-bs-toggle="modal" data-bs-target="#mymodal2">
+                            <div class="btn btn-primary">
+                                Смотреть
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://akosijesyang.files.wordpress.com/2015/02/naruto-tribute3.png" class="card-img-top"
+                        alt="Naruto">
+                    <div class="card-body">
+                        <h5 class="card-title">Naruto | 064 03x12</h5>
+                        <p class="card-text">Anime vypráví o životě hlučné a neklidné teen Ninja Naruto Uzumaki, sní o
+                            dosažení všeobecného uznání a stát se Hokage-hlavou své vesnice a nejsilnější ninja.
+                            Chcete-li dosáhnout úcty ostatních, musí projít tisíci překážek: ninja zkoušky, různé mise a
+                            bitvy.
+                        </p>
+
+                        <div class="itd_play" data-bs-toggle="modal" data-bs-target="#mymodal3">
+                            <div class="btn btn-primary">
+                                Смотреть
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://www.pngitem.com/pimgs/m/279-2792400_master-shrek-the-musical-logo-shrek-the-musical.png"
+                        class="card-img-top" alt="Shrek">
+                    <div class="card-body">
+                        <h5 class="card-title">Shrek</h5>
+                        <p class="card-text">Shrek - je obrovský zelený zlobr, který žije sám v bažině v okolí
+                            města-státu Duloc, obce postavami z různých evropských pohádek a legend.
+                            Lidé, kteří jsou laskavě duševně a v rozporu s existujícími přesvědčeními, nejí, takže občas
+                            se na bažině společnosti "lovců loupeží" jen vyděsí a jejich strach zahřeje jeho sebeúctu.
+                        </p>
+
+                        <div class="itd_play" data-bs-toggle="modal" data-bs-target="#mymodal4">
+                            <div class="btn btn-primary">
+                                Смотреть
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">© 2022 Granovsky & Borisyuk</p>
+
+        <a href="{% url 'home'%}"
+            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <img src="{% static 'img\logo.png' %}" alt="logo" height="40px">
+        </a>
+
+        <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="{% url 'home'%}" class="nav-link px-2 text-muted">Главное меню</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Разделы</a></li>
+            <!--ИЗМЕНИТЬ ПОТОМ ССЫЛКИ-->
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Тест</a></li>
+            <li class="nav-item"><a href="{% url 'about'%}" class="nav-link px-2 text-muted">О нас</a></li>
+        </ul>
+    </footer>
+</div>
+
+
+<!-- Подключение 4й ссылки ютуба к кнопке -->
+<div class="modal fade" id="mymodal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Shrek</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class='embed-container'><iframe src='https://www.youtube.com/embed//ilaCF4i5N9c' frameborder='0'
+                        allowfullscreen></iframe></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn_2 btn btn-secondary" data-bs-dismiss="modal" aria-label="close">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Подключение 3й ссылки ютуба к кнопке -->
+<div class="modal fade" id="mymodal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Naruto | 064 03x12</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class='embed-container'><iframe src='https://www.youtube.com/embed//Oz6BfffvRnA' frameborder='0'
+                        allowfullscreen></iframe></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn_2 btn btn-secondary" data-bs-dismiss="modal" aria-label="close">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Подключение 2й ссылки ютуба к кнопке -->
+<div class="modal fade" id="mymodal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Dialog v Češtině | Novoroční předsevzetí</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class='embed-container'><iframe src='https://www.youtube.com/embed//FHhuGNFFKdI' frameborder='0'
+                        allowfullscreen></iframe></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn_2 btn btn-secondary" data-bs-dismiss="modal" aria-label="close">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Подключение 1й ссылки ютуба к кнопке -->
+<div class="modal fade" id="mymodal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Prasátko Peppa | Slečna Delfína | Kreslená</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class='embed-container'><iframe src='https://www.youtube.com/embed//uMvY3lf3r1M' frameborder='0'
+                        allowfullscreen></iframe></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn_2 btn btn-secondary" data-bs-dismiss="modal" aria-label="close">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+      <!-- Скрипт для остановки видео в модальном окне -->
+      <script>
+        $(function () {
+            $(".btn_2 ").on("click", function () {
+                $("iframe").each(function () {
+                    var src = $(this).attr('src');
+                    $(this).attr('src', src);
+                });
+                // console.log("hello") 
+            });
+        });
+    </script>
+    {% endblock %}

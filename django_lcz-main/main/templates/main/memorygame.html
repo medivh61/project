@@ -1,0 +1,145 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Memory Game{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/memorygame.css' %}">
+<script src="{% static 'js/memorygame.js' %}" defer></script>
+{% endblock %}
+
+
+{% block content %}
+<!-- шапка -->
+<div class="container">
+  <header
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <a href="{% url 'home'%}"
+          class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+          <img src="{% static 'img\logo.png' %}" alt="logo" height="60px">
+      </a>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">Главное меню</a></li>
+          <li><a href="{% url 'readcz'%}" class="nav-link px-2 link-dark">Чтение</a></li>
+          <li><a href="{% url 'makecard'%}" class="nav-link px-2 link-dark">Создать карточку</a></li>
+          <li><a href="{% url 'listening'%}" class="nav-link px-2 link-dark">Слушание</a></li>
+          <!--ИЗМЕНИТЬ ПОТОМ ССЫЛКИ-->
+          <li><a href="{% url 'main-view'%}" class="nav-link px-2 link-dark">Тест</a></li>
+          <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">О нас</a></li>
+      </ul>
+
+      <div class="col-md-3 text-end">
+          <!-- <button type="button" class="btn btn-outline-primary me-2">Войти</button>
+          <button type="button" class="btn btn-primary">Регистрация</button> -->
+          <form action="{% url 'logout' %}" method="get">
+              <button type="submit" class="btn btn-outline-primary me-2">Выйти</button>
+          </form>
+      </div>
+  </header>
+
+
+  <!-- игра -->
+  <section class="memory-game">
+    <div class="memory-card" data-framework="aurelia">
+      <img class="front-face" src="{% static 'img/memory/1.png' %}" alt="Aurelia" />
+      <img class="back-face" src="{% static 'img/memory/back-logo.png' %}" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="aurelia">
+      <img class="front-face" src="{% static 'img/memory/1.png' %}" alt="Aurelia" />
+      <img class="back-face" src="{% static 'img/memory/back-logo.png' %}" alt="JS Badge" />
+    </div>
+
+    <div class="memory-card" data-framework="vue">
+      <img class="front-face" src="{% static 'img/memory/2.png' %}" alt="Vue" />
+      <img class="back-face" src="{% static 'img/memory/back-logo.png' %}" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="vue">
+      <img class="front-face" src="{% static 'img/memory/2.png' %}" alt="Vue" />
+      <img class="back-face" src="{% static 'img/memory/back-logo.png' %}" alt="JS Badge" />
+    </div>
+
+    <div class="memory-card" data-framework="angular">
+      <img class="front-face" src="{% static 'img/memory/3.png' %}" alt="Angular" />
+      <img class="back-face" src="{% static 'img/memory/back-logo.png' %}" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="angular">
+      <img class="front-face" src="{% static 'img/memory/3.png' %}" alt="Angular" />
+      <img class="back-face" src="{% static 'img/memory/back-logo.png' %}" alt="JS Badge" />
+    </div>
+
+    <div class="memory-card" data-framework="ember">
+      <img class="front-face" src="{% static 'img/memory/4.png' %}" alt="Ember" />
+      <img class="back-face" src="{% static 'img/memory/back-logo.png' %}" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="ember">
+      <img class="front-face" src="{% static 'img/memory/4.png' %}" alt="Ember" />
+      <img class="back-face" src="{% static 'img/memory/back-logo.png' %}" alt="JS Badge" />
+    </div>
+
+    <div class="memory-card" data-framework="backbone">
+      <img class="front-face" src="{% static 'img/memory/5.png' %}" alt="Backbone" />
+      <img class="back-face" src="{% static 'img/memory/back-logo.png' %}" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="backbone">
+      <img class="front-face" src="{% static 'img/memory/5.png' %}" alt="Backbone" />
+      <img class="back-face" src="{% static 'img/memory/back-logo.png' %}" alt="JS Badge" />
+    </div>
+
+    <div class="memory-card" data-framework="react">
+      <img class="front-face" src="{% static 'img/memory/6.png' %}" alt="React" />
+      <img class="back-face" src="{% static 'img/memory/back-logo.png' %}" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="react">
+      <img class="front-face" src="{% static 'img/memory/6.png' %}" alt="React" />
+      <img class="back-face" src="{% static 'img/memory/back-logo.png' %}" alt="JS Badge" />
+    </div>
+  </section>
+
+  <!-- слова из игры -->
+  <div class="btn-group dropup">
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      Слова из игры
+    </button>
+    <ul class="dropdown-menu">
+      <li><p class="mgame">zákusek - десерт</p></li>
+      <li><p class="mgame">překvapení - сюрприз</p></li>
+      <li><p class="mgame">obálka - конверт</p></li>
+      <li><p class="mgame">kočka - кошка</p></li>
+      <li><p class="mgame">počítač - компьютер</p></li>
+      <li><p class="mgame">člověk - человек</p></li>
+    </ul>
+  </div>
+
+
+  <!-- уровни сложностей -->
+  <p class="lvl-game">Выберите уровень сложности:</p>
+  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+    
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+    <!-- <label class="btn btn-outline-primary" for="btnradio1">Легкий</label> -->
+    <a class="btn btn-outline-primary" for="btnradio1" href="#">Легкий</a>
+  
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+    <!-- <label class="btn btn-outline-primary" for="btnradio2">Средний</label> -->
+    <a class="btn btn-outline-primary" for="btnradio2" href="#">Средний</a>
+  
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+    <!-- <label class="btn btn-outline-primary" for="btnradio3">Сложный</label> -->
+    <a class="btn btn-outline-primary" for="btnradio3" href="#">Сложный</a>
+  </div>
+
+
+  <!-- кнопка перезагрузки -->
+  <div class="restart">
+  <a class="btn btn-secondary" href="#" onclick="reload_confirm();">Начать заново</a>
+  <script>
+  function reload_confirm(){
+    if (confirm('Вы действительно хотите Начать заново?')) {
+      window.location.reload();
+    }
+  }
+  </script>
+  </div>
+
+{% endblock content %}

@@ -1,0 +1,98 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background: rgb(255,228,249);
+  background: radial-gradient(circle, rgba(255,228,249,1) 0%, rgba(208,226,255,1) 100%);
+  /* background: #e4e4ff; */
+}
+.border-bottom {
+  border-bottom: 1px solid #b8a8c1!important;
+}
+
+
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.active, 
+.open>.dropdown-toggle.btn-outline-primary {
+    color: #fff;
+    border-color: #511f52;
+    background-color: #511f52;
+}
+
+.btn-outline-primary {
+  color: #511f52;
+  border-color: #511f52;
+}
+
+.mgame{
+  padding: 10px;
+  margin: 0;
+}
+.btn-secondary, .btn-secondary:focus, .btn-secondary:hover{
+  color: #fff;
+  background-color: #511f52;
+  border-color: #511f52;
+}
+.btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active{
+  color: #fff;
+  background-color: #7e4080;
+  border-color: #7e4080;
+}
+.lvl-game{
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+
+.restart{
+  float: right;
+}
+
+  
+  .memory-game {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+  }
+  
+  .memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    /* box-shadow: 1px 1px 1px rgba(0,0,0,.3); */
+  }
+  
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
+  
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+  
+  .front-face,
+  .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: #cfc1f0;
+    backface-visibility: hidden;
+  }
+  
+  .front-face {
+    transform: rotateY(180deg);
+  }

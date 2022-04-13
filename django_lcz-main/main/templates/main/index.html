@@ -1,0 +1,113 @@
+{% load static %}
+
+
+    {% block head %}
+    <link rel="shortcut icon" href="{% static 'img/logo.png' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'css\style.css' %}">
+    <script src="{% static 'js/landing.js' %}" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    {% endblock %}
+
+<body>
+    <main>
+        <div class="big-wrapper light">
+            <header>
+                <div class="container">
+                    <div class="logo">
+                        <img src="{% static 'img\logo.png' %}" alt="Logo" />
+                    </div>
+                    <div class="links">
+                        <ul>
+                            <li><a href="{% url 'readcz'%}" class="nav-link px-2 link-dark">Чтение</a></li>
+                            <li><a href="{% url 'makecard'%}" class="nav-link px-2 link-dark">Создать карточку</a></li>
+                            <li><a href="{% url 'listening'%}" class="nav-link px-2 link-dark">Аудирование</a></li>
+                            <li><a href="{% url 'main-view'%}" class="nav-link px-2 link-dark">Тест</a></li>
+                            <li><a href="{% url 'logout' %}" class="btn">Выйти</a></li>
+                            {% if request.user.is_staff %}
+                            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark"></a>Для админов</li>
+                            {% endif %}                
+                        </ul>
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="hamburger-menu">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </header>
+            <div class="showcase-area">
+                <div class="container">
+                    <div class="left">
+                        <div class="big-title">
+                            <h1>Добро пожаловать,</h1>
+                            <h1>Начни изучение прямо сейчас.</h1>
+                        </div>
+                        <p class="text">
+                            Добро пожаловать на платформу по изучению чешского языка.
+                            Здесь вы найдете много полезного материала!
+                        </p>
+                        <div class="cta">
+                            <a href="#" class="btn">Начать учиться</a>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <img src="{% static 'img\Learn Chezh.png' %}" alt="Person Image" class="person" />
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-area">
+                <div class="container">
+                    <button class="toggle-btn">
+                        <i class="far fa-moon"></i>
+                        <i class="far fa-sun"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<!-- <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <a href="{% url 'home'%}" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <img src="{% static 'img\logo.png' %}" alt="logo" height="60px">
+            </a>
+
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="{% url 'home'%}" class="nav-link px-2 link-secondary">Главное меню</a></li>
+            <li><a href="{% url 'readcz'%}" class="nav-link px-2 link-dark">Чтение</a></li> 
+            <li><a href="{% url 'makecard'%}" class="nav-link px-2 link-dark">Создать карточку</a></li> -->
+<!-- <li><a href="{% url 'listening'%}" class="nav-link px-2 link-dark">Слушание</a></li> ИЗМЕНИТЬ ПОТОМ ССЫЛКИ
+            <li><a href="{% url 'main-view'%}" class="nav-link px-2 link-dark">Тест</a></li>
+            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark">О нас</a></li>
+            
+            {% if request.user.is_staff %}
+            <li><a href="{% url 'home'%}" class="nav-link px-2 link-dark"></a>Для админов</li>
+            {% endif %}
+
+            </ul>
+            <div class="col-md-3 text-end">
+
+            <form action="{% url 'logout' %}" method="get">
+                <span class="hello-msg">Добро пожаловать, {{request.user}}</span>
+                <button type="submit" class="btn btn-outline-primary me-2">Выйти</button>
+            </form>
+            </div>
+            
+        </header>
+    </div>
+
+
+    <main role="main" class="inner cover">
+        <img src ="https://sun9-60.userapi.com/impg/zdEQZSSQ5Q7kJ3TwpspalbtIgvq6ZH8hHdp8CQ/839gOvLA-cw.jpg?size=2560x1707&quality=95&sign=2515e33ff7d4fcb11f3e9655be269350&type=album" 
+        width="1125" height="750" alt="LearnCzech"> img=4500x3000 -->
+<!-- <h1 class="cover-heading">Добро пожаловать в LearnCzech!</h1>
+        <p class="lead">Это платформа для изучения чешского языка.</p>
+        <p class="lead">
+            <a href="{% url 'about'%}" class="btn btn-lg btn-secondary">О нас</a> эти кнопки временные, потом застилизуем или !!уберем!!
+            <a href="{% url 'makecard'%}" class="btn btn-lg btn-secondary">Создать карточку!</a>
+            <a href="{% url 'learncard'%}" class="btn btn-lg btn-secondary">Учить карточки!</a>
+            <a href="{% url 'readcz'%}" class="btn btn-lg btn-secondary">Читать </a>
+        </p>
+
+
+    </main> -->
