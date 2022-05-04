@@ -205,11 +205,12 @@ header .container {
 }
 
 .person {
-  width: 113%;
+  width: 99%;
   transform: translate(30%, 25px);
 }
 
 .toggle-btn {
+  /* margin-top: -7%; */
   display: inline-block;
   border: none;
   background: var(--darkTwo);
